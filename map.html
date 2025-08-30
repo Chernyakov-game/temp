@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map of Group Psychotherapy Programs in Russian-Speaking Regions</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        #map { height: 600px; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        var map = L.map('map').setView([50, 60], 4);  // Center roughly over the region
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        // Moscow
+        L.marker([55.75583, 37.61778]).addTo(map)
+            .bindPopup(`<b>Moscow Programs</b><br>
+            <ul>
+                <li><a href="https://gestalt.ru/specialization/gruppovaya-psihoterapiya-6/">Group Gestalt Therapy Specialization - Moscow Gestalt Institute</a></li>
+                <li>Basics of Gestalt Therapy - Higher School of Gestalt Therapy</li>
+                <li>Integrative Group Psychotherapy - Moscow Institute of Gestalt Therapy</li>
+                <li>Gestalt Approach in Groups - Various institutes</li>
+                <li><a href="https://inpsycho.ru/additional_education/93">Group Psychoanalysis - Institute of Psychoanalysis</a></li>
+                <li>Group Psychodynamic Therapy - Moscow Institute of Group Analysis</li>
+                <li>Large Group Experiences - Moscow Institute of Group Analysis</li>
+                <li><a href="https://bk.associationcbt.ru/">Basic CBT Course - Association of CBT</a></li>
+                <li>Full Basic CBT Course - Modern Psychology Academy</li>
+                <li>CBT in Clinical Practice - HSE University</li>
+                <li>Dialectic Center CBT 2.0 - Dialectic Center</li>
+                <li><a href="https://igisp.ru/programmes/">Systemic Constellations - Institute of Group and Family Psychotherapy</a></li>
+                <li>Group Therapy Integration - AIST Academy</li>
+            </ul>`);
+        // St. Petersburg
+        L.marker([59.93750, 30.30861]).addTo(map)
+            .bindPopup(`<b>St. Petersburg Programs</b><br>
+            <ul>
+                <li>CBT: Principles, Stages, Techniques - IPMP-SP</li>
+                <li>CBT: Seven Steps - IPMP-SP</li>
+            </ul>`);
+        // Kyiv
+        L.marker([50.45000, 30.52333]).addTo(map)
+            .bindPopup(`<b>Kyiv Programs</b><br>
+            <ul>
+                <li><a href="https://www.kigip.com.ua/ru/kigip-o-nas">Group Gestalt Therapy - Kyiv Institute of Gestalt and Psychodrama</a></li>
+                <li>Group Therapy in Kyiv - Elena Mitina/Evgeny Hrechanyk</li>
+                <li>Humanistic Psychotherapy - Various centers</li>
+                <li>Russian-Speaking Group Analysis (RSGA)</li>
+            </ul>`);
+        // Odesa
+        L.marker([46.485722, 30.743444]).addTo(map)
+            .bindPopup(`<b>Odesa Programs</b><br>
+            <ul>
+                <li>Existential Counseling Specialization - UA EPP</li>
+            </ul>`);
+        // Astana
+        L.marker([51.14722, 71.42222]).addTo(map)
+            .bindPopup(`<b>Astana Programs</b><br>
+            <ul>
+                <li>Art-Therapy Program - Psychosfera</li>
+                <li>Art-Therapy Groups - Indigo Art Therapy</li>
+            </ul>`);
+    </script>
+</body>
+</html>
